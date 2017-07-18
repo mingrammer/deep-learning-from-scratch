@@ -1,0 +1,9 @@
+# compiled files
+__pycache__/
+
+# editors and IDEs
+.vscode/
+.idea/
+
+# ipython & jupyter notebook
+.ipynb_checkpoints/
