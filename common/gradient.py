@@ -1,7 +1,7 @@
 import numpy as np
 
 
-def _numerical_gradient_no_batch(f, x):
+def _numerical_gradient_1d(f, x):
     h = 1e-4
     grad = np.zeros_like(x)
 
@@ -19,18 +19,18 @@ def _numerical_gradient_no_batch(f, x):
     return grad
 
 
-def numerical_gradient(f, x):
+def numerical_gradient_2d(f, x):
     if x.ndim == 1:
-        return _numerical_gradient_no_batch(f, x)
+        return _numerical_gradient_1d(f, x)
     else:
         grad = np.zeros_like(x)
 
         for idx, x in enumerate(x):
-            grad[idx] = _numerical_gradient_no_batch(f, x)
+            grad[idx] = _numerical_gradient_1d(f, x)
         return grad
 
 
-def gradient(f, x):
+def numerical_gradient(f, x):
     h = 1e-4
     grad = np.zeros_like(x)
 
