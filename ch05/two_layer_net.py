@@ -25,7 +25,7 @@ class TwoLayerNet:
 
         self.lastlayer = SoftmaxWithLoss()
 
-        def predict(self, x):
+    def predict(self, x):
         for layer in self.layers.values():
             x = layer.forward(x)
         return x
